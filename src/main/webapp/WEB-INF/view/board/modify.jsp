@@ -8,45 +8,43 @@
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
+<c:import url="/WEB-INF/fragment/navbar.jsp"/>
 
-<c:import url="/WEB-INF/fragment/navbar.jsp"></c:import>
-
-<%--div.container>div.row>div.col-6--%>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-6">
-            <h3 class="mb-4">새 게시물 작성</h3>
 
-            <form action="/add" method="post">
+
+            <h3 class="mb-4">${board.id}번 게시물 수정</h3>
+            <form action="/modify" method="post">
+                <input type="hidden" name="id" value="${board.id}">
                 <div class="mb-3">
                     <label for="inputTitle" class="form-label">
                         제목
                     </label>
-
-                    <input class="form-control" id="inputTitle" type="text" name="title" required>
+                    <input id="inputTitle" class="form-label" type="text" name="title" value="${board.title}" required>
                 </div>
                 <div class="mb-3">
                     <label for="textareaContent" class="form-label">
                         본문
                     </label>
-                    <textarea class="form-control" id="textareaContent" name="content" cols="30" rows="10"
-                              required></textarea>
+                    <textarea id="textareaContent" class="form-control" cols="30" rows="10" name="content"
+                              required>${board.content}</textarea>
                 </div>
                 <div class="mb-3">
-                    <label for="inputWriter" class="form-label">
-                        작성자
-                    </label>
-                    <input class="form-control" id="inputWriter" type="text" name="writer" required>
+                    <label for="inputWriter" class="form-label"></label>
+                    작성자
+                    <input id="inputWriter" class="form-control" type="text" name="writer" value="${board.writer}"
+                           required>
                 </div>
                 <div class="mb-3">
-                    <button class="btn btn-primary">저장</button>
+                    <button class="btn btn-secondary">수정</button>
                 </div>
             </form>
 
         </div>
     </div>
 </div>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
