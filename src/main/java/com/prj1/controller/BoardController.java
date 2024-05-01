@@ -47,7 +47,14 @@ public class BoardController {
         // 게시물 목록 조회(select)
         // 모델에 넣고
         model.addAttribute("boardList", service.list());
-        // jsp로 포워드
+        // jsp 로 포워드
         return "board/home";
+    }
+
+    @GetMapping("/delete")
+    public String delete(Model model, Integer id) {
+
+        model.addAttribute("delete", service.delete(id));
+        return "board/delete";
     }
 }

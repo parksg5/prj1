@@ -28,6 +28,7 @@
 
 <div>
     <form action="/delete" method="post">
+        <%-- controller, service, mapper 에 적절한 메소드 작성 --%>
         <input type="hidden" name="id" value="${board.id}">
         <button>삭제</button>
     </form>

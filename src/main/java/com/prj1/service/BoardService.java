@@ -27,4 +27,9 @@ public class BoardService {
 
         return mapper.selectAll();
     }
+
+    public Object delete(Integer id) {
+
+        return mapper.delete(id);
+    }
 }
