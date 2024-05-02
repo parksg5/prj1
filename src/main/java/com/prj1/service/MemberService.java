@@ -45,4 +45,13 @@ public class MemberService {
             return "이미 존재하는 이메일입니다.";
         }
     }
+
+    public String nickNameCheck(String nickName) {
+        Member member = mapper.selectName(nickName);
+        if (member == null) {
+            return "사용 가능한 별명입니다.";
+        } else {
+            return "이미 존재하는 별명입니다.";
+        }
+    }
 }

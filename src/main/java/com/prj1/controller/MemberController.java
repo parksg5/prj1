@@ -72,4 +72,12 @@ public class MemberController {
         String message = service.emailCheck(email);
         return message;
     }
+
+    @GetMapping("nickName")
+    @ResponseBody
+    public String nickNameCheck(String nickName) {
+        System.out.println("nickName = " + nickName);
+        String message = service.nickNameCheck(nickName);
+        return message;
+    }
 }

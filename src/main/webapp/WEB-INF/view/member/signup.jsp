@@ -40,8 +40,11 @@
                     <div class="form-text" id="passwordMessage"></div>
                 </div>
                 <div class="mb-3">
-                    <label for="inputNickName" class="form-label">별명</label>
+                    별명
                     <input name="nickName" id="inputNickName" required type="text" class="form-control">
+                    <button onclick="nickNameCheck();" type="button" id="buttonNickNameCheck"
+                            class="btn btn-outline-secondary">중복 확인
+                    </button>
                 </div>
                 <div>
                     <button class="btn btn-primary">가입</button>
@@ -86,6 +89,17 @@
             alert("패스워드가 일치하지 않습니다.")
             return false;
         }
+    }
+
+    async function nickNameCheck() {
+        const nickNameValue = document.querySelector("#inputNickName").value;
+        const url = "/member/nickName?nickName=" + nickNameValue;
+
+        // ajax 요청
+        const response = await fetch(encodeURI(url));
+        // 응답처리
+        // console.log(response.text());
+        alert(await response.text());
     }
 </script>
 

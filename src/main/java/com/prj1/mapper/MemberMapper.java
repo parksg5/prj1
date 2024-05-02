@@ -52,4 +52,12 @@ public interface MemberMapper {
             WHERE email = #{email}
             """)
     Member selectByEmail(String email);
+
+
+    @Select("""
+            SELECT *
+            FROM member
+            WHERE nick_name = #{nickName}
+            """)
+    Member selectName(String nickName);
 }
