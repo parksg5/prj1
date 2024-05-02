@@ -20,6 +20,7 @@
             <form action="/member/signup" method="post" onsubmit="return checkValues()">
                 <%-- div*3>label.form-label+input.form-control --%>
                 <div class="mb-3">
+                    이메일
                     <div class="input-group">
                         <input name="email" id="inputEmail" required type="email" class="form-control">
                         <button onclick="emailCheck();" type="button" id="buttonEmailCheck"
