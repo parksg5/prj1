@@ -32,12 +32,7 @@
                     <textarea id="textareaContent" class="form-control" cols="30" rows="10" name="content"
                               required>${board.content}</textarea>
                 </div>
-                <div class="mb-3">
-                    <label for="inputWriter" class="form-label"></label>
-                    작성자
-                    <input id="inputWriter" class="form-control" type="text" name="writer" value="${board.writer}"
-                           required>
-                </div>
+
                 <div class="mb-3">
                     <button class="btn btn-secondary">수정</button>
                 </div>
