@@ -5,6 +5,9 @@
     <title>Title</title>
 </head>
 <body>
+
+<c:import url="/WEB-INF/fragement/navbar.jsp"></c:import>
+
 <h3>게시물 목록</h3>
 
 <table>
