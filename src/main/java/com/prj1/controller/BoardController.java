@@ -22,8 +22,6 @@ public class BoardController {
 
     @PostMapping("/add")
     public String addPost(Board board, RedirectAttributes rttr) {
-        System.out.println("board = " + board);
-
         service.add(board);
 
         rttr.addAttribute("id", board.getId());
@@ -51,5 +49,19 @@ public class BoardController {
         service.remove(id);
 
         return "redirect:/";
+    }
+
+    @GetMapping("/modify")
+    public String modifyPost(Integer id, Model model) {
+        model.addAttribute("board", service.get(id));
+        return "board/modify";
+    }
+
+    @PostMapping("/modify")
+    public String modifyPost(Board board, RedirectAttributes rttr) {
+        service.modify(board);
+
+        rttr.addAttribute("id", board.getId());
+        return "redirect:/board";
     }
 }

@@ -8,25 +8,24 @@
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
-
-<c:import url="/WEB-INF/fragment/navbar.jsp"></c:import>
-
-<h3>새 게시물 작성</h3>
-<form action="/add" method="post">
+<c:import url="/WEB-INF/fragment/navbar.jsp"/>
+<h3>${board.id}번 게시물 수정</h3>
+<form action="/modify" method="post">
+    <input type="hidden" name="id" value="${board.id}">
     <div>
         제목
-        <input type="text" name="title" required>
+        <input type="text" name="title" value="${board.title}" required>
     </div>
     <div>
         본문
-        <textarea name="content" cols="30" rows="10" required></textarea>
+        <textarea name="content" cols="30" rows="10" required>${board.content}</textarea>
     </div>
     <div>
         작성자
-        <input type="text" name="writer" required>
+        <input type="text" value="${board.writer}" name="writer" required>
     </div>
     <div>
-        <button>저장</button>
+        <button>수정</button>
     </div>
 </form>
 
