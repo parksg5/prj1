@@ -45,4 +45,11 @@ public class BoardController {
 
         return "board/home";
     }
+
+    @PostMapping("/delete")
+    public String delete(Integer id) {
+        service.remove(id);
+
+        return "redirect:/";
+    }
 }
